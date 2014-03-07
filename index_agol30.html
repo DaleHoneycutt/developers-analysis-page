@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6"> <![endif]-->
 <!--[if IE 7]>         <html class="ie lt-ie9 lt-ie8 ie7"> <![endif]-->
 <!--[if IE 8]>         <html class="ie lt-ie9 ie8"> <![endif]-->
@@ -336,12 +336,30 @@ Overview of the Spatial Analysis service</h2>
 	  <p>In addition to accessing the tools using the ArcGIS.com map viewer, you can access them via their REST API.</p>
 	  <p>The Spatial Analysis service is a geoprocessing service that contains a number of tasks.  Each task is directly equatable to the analysis tools available in the ArcGIS.com map viewer.  To learn more about accessing geoprocessing services via their REST API, see the ArcGIS Desktop help topic <a class="xref" href="http://resources.arcgis.com/help/main/10.1/index.html#/An_overview_of_geoprocessing_REST_Services/005700000065000000/">An overview of geoprocessing REST services</a></p>
 	  -->
+	  
+	  
+	
+	 <!--  "icon-help" should be the beta icon, but I don't know what it is -->
+	 <!-- Removing beta note for June 2013 release.  Option: leave note saying beta program has ended
+	<p><aside class="note">
+		<h5 class="icon-help">Beta:</h5>
+		<p>The analysis service is in beta release.  This means a few things to you. 
+		<ul purpose="ul">
+			<li purpose="li">The service is available to all ArcGIS Online users with organizational accounts. They are stable components of the site that may have incomplete functionality or documentation and may contain some minor issues.</li>
+			<li purpose="li">There is no credit cost for using the analysis service during the beta period. However, credits are charged for the hosting of the feature services that are the result of an analysis.  For more information on credits, see  see <a class="xref" href="http://www.esri.com/software/arcgis/arcgisonline/credits">Service credits overview</a> which includes access to an <a class="xref" href="http://www.esri.com/software/arcgis/arcgisonline/credits/estimator">interactive Service Credits Estimator</a>.</li>
+			<li purpose="li">When the beta program ends, analysis tools will consume credits.  There will be announcements about the transition from free use of the tools to credit-based use.</li>
+			<li purpose="li">If you have issues or are experiencing problems with any of the beta functionality, please contact Esri Technical Support or visit the <a class="xref" href="http://forums.arcgis.com/forums/30-arcgis-online">ArcGIS Online forum</a>.</li>
+			
+		</ul>
+		</p>
+	</aside></p>  
+	-->
+	
+  
 
 	<h3>Tasks in the Spatial Analysis service</h3>
 	<p>The service contains many tasks which are arranged into categories. These categories are the same as those that appear in Perform Analysis sidebar in the ArcGIS.com map viewer application.  These are simply logical groupings and do not affect how you access or use the tasks in any way.</p>
-	
-	<!-- Category: Summarize Data -->
-	<hr>
+	 <hr>
 	<h4>Summarize Data</h4>
 
       <h5><a href="/rest/analysis/api-reference/aggregate-points.htm">Aggregate Points</a></h5>
@@ -355,42 +373,29 @@ Overview of the Spatial Analysis service</h2>
 	   <h5><a href="/rest/analysis/api-reference/summarize-within.htm">Summarize Within</a></h5>
 	   <img class="alignleft" src="/rest/analysis/api-reference/GUID-2E97B2ED-56A7-4242-B0E0-C1824E6F643F-web.png"/>
 	   <p>The Summarize Within task finds the point, line, or polygon features (or portions of these features) that are within the boundaries of polygons in another layer. You can think of Summarize Within as taking two layers and stacking them on top of each other, then peering down through the stack and gathering statistics about the features at the bottom of the stack that are within the polygons at the top of the stack.  </p>
-	  
-	<hr>
-    <!-- Category: Find Locations -->
-	<h4>Find Locations</h4>
+	   <!-- <p>The Summarize Within task finds the point, line, or polygon features (or portions of these features) that are within the boundaries of polygons in another layer. You can think of Summarize Within as taking two layers and stacking them on top of each other. One of the layers, the <code class="codeph">sumWithinLayer</code>,  must be a polygon layer, and imagine that these polygon boundaries are all colored red. The other layer, the <code class="codeph">summaryLayer</code>, can be any feature type—point, line, or polygon. After stacking these layers on top of each other, you peer down through the stack and count the number of features in the <code class="codeph">summaryLayer</code> that fall within the polygons with the red boundaries (the <code class="codeph">sumWithinLayer</code>). Not only can you count the number of features, you can calculate simple statistics about the attributes of the features in the <code class="codeph">summaryLayer</code>, such as sum, mean, minimum, maximum, and so on.</p> -->
+	    <hr>
+		
+	   <h4>Find Locations</h4>
 	   <h5><a href="/rest/analysis/api-reference/find-existing-locations.htm">Find Existing Locations</a></h5>
 	   <img class="alignleft" src="/rest/analysis/api-reference/GUID-C5409FC7-EC93-45C5-8B00-3D6EA80A0A77-web.png"/>
 	   <p>The Find Existing Locations task selects features in the input layer that meet a query you specify.  A query is made up of one or more expressions.  There are two types of expressions: attribute and spatial.</p>
 	   
-	   <h5><a href="/rest/analysis/api-reference/derive-new-locations.htm">Derive New Locations</a></h5>
-	   <img class="alignleft" src="/rest/analysis/api-reference/GUID-14BF9A68-AAD7-4849-B05C-3433A063B4B8-web.png"/>
-	   <p>The Derive New Locations task creates new features from the input layers that meet a query you specify.  A query is made up of one or more expressions.  There are two types of expressions: attribute and spatial.</p>
-	   
-	   <h5><a href="/rest/analysis/api-reference/find-similar-locations.htm">Find Similar Locations</a></h5>
-	   <img class="alignleft" src="/rest/analysis/api-reference/GUID-01EFFE9D-141F-45BA-AB21-C9E3490587F2-web.png"/>
-	   <p>The Find Similar Locations task measures the similarity of locations in your candidate search layer to one or more reference locations based on criteria you specify.</p>
-	   
-	<hr>
-	
-	<!-- Category: Data Enrichment -->
-	<h4>Data Enrichment</h4>
+	   <hr>
+	   <h4>Data Enrichment</h4>
 	   <h5><a href="/rest/analysis/api-reference/enrich-layer.htm">Enrich Layer</a></h5>
 	   <img class="alignleft" src="/rest/analysis/api-reference/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png"/>
 	   <p>The Enrich Layer task enriches your data by getting facts about the people, places, and businesses that surround your data locations.</p>
 	   
-	<hr>
-	
-	<!-- Category: Analyze Patterns -->
-	<h4>Analyze Patterns</h4>
+	    <hr>
+	  <h4>Analyze Patterns</h4>
       <h5><a href="/rest/analysis/api-reference/find-hot-spots.htm">Find Hot Spots</a></h5>
 	  <img class="alignleft" src="/rest/analysis/api-reference/GUID-C2575FC6-F14C-4332-B3BF-AB4EDA15177B-web.png"/>
       <p>The Find Hot Spots task will analyze incident data (such as crimes, traffic accidents, and trees) or the values associated with features (such as the number of people in each census tract or total sales for retail stores). It finds statistically significant spatial clusters of high values (hot spots) and low values (cold spots). For incident data, hot spots are locations with lots of incidents.</p>
 	  
-	<hr>
-	
-	<!-- Category: Use Proximity -->
-	<h4>Use Proximity</h4> 
+	   <hr>
+	  <h4>Use Proximity</h4>
+	  
 	  <h5><a href="/rest/analysis/api-reference/create-buffers.htm">Create Buffers</a></h5>
       <img class="alignleft" src="/rest/analysis/api-reference/GUID-652EECCB-3A95-4984-9283-16E5CD36D569-web.png"/>
 	  <p>A buffer is an area that covers a given distance from a point, line, or polygon feature. Buffers are typically used to create areas that can be further analyzed using a tool such as Overlay Layers. For example, if the question is "What buildings are within one mile of the school?", the answer can be found by creating a one-mile buffer around the school and overlaying the buffer with the layer containing building footprints. The end result is a layer of those buildings within one mile of the school. </p>
@@ -403,10 +408,8 @@ Overview of the Spatial Analysis service</h2>
       <img class="alignleft" src="/rest/analysis/api-reference/GUID-712E0E63-3047-4D1C-B2A9-D336FEC79BF0-web.png"/>
 	  <p>The Find Nearest task finds the nearest features and, optionally, reports and ranks the distance to the nearby features. To find what's nearest, the task can either measure straight-line distance, road distance, or driving time. There are options to limit the number of nearest features to find or the search range in which to find them. </p>	 
 	  
-	<hr>
-	
-	<!-- Category: Manage Data -->
-	<h4>Manage Data</h4>
+	   <hr>
+	  <h4>Manage Data</h4>
 
       <h5><a href="/rest/analysis/api-reference/extract-data.htm">Extract Data</a></h5>
       <img class="alignleft" src="/rest/analysis/api-reference/GUID-0DACA98E-B1A2-4E25-957B-EDC651A3DDD1-web.png"/>
@@ -419,17 +422,22 @@ Overview of the Spatial Analysis service</h2>
       <h5><a href="/rest/analysis/api-reference/merge-layers.htm">Merge Layers</a></h5>
       <img class="alignleft" src="/rest/analysis/api-reference/GUID-DACDAC49-3ECE-45A2-AC42-69016B3B8ADA-web.png"/>
 	  <p>The Merge Layers task copies features from two layers into a new layer. The layers to be merged must all contain the same feature types (points, lines, or polygons). You can control how the fields from the input layers are joined and copied.  </p>		
+
 	  
 	  <h5><a href="/rest/analysis/api-reference/overlay-layers.htm">Overlay Layers</a></h5>
 	  <img class="alignleft" src="/rest/analysis/api-reference/GUID-F7C42432-C8C5-4E4F-8275-EC7E95D00CB7-web.png"/>
       <p>Overlay combines two or more layers into one single layer. You can think of overlay as peering through a stack of maps and creating a single map containing all the information found in the stack. In fact, before the advent of GIS, cartographers would literally copy maps onto clear acetate sheets, overlay these sheets on a light table, and hand draw a new map from the overlaid data. Overlay is much more than a merging of line work; all the attributes of the features taking part in the overlay are carried through to the final product. Overlay is used to answer one of the most basic questions of geography, "what is on top of what?" </p>	  
 
-	  <h5><a href="/rest/analysis/api-reference/field-calculator.htm">Field Calculator</a></h5>
-	  <!-- GUID-B9D479D7-4E81-4D3D-8D62-7A552C736242-web.png -->
-	  <img class="alignleft" src="/rest/analysis/api-reference/GUID-B9D479D7-4E81-4D3D-8D62-7A552C736242-web.png"/>
-      <p>The Field Calculator task updates values in a field based on an expression you provide.  Values are updated on the result layer. You can update an existing field or add a new field. </p>	 
 	  
-    <hr>
+      <hr>
+    <!-- Pricing information not needed at this time because it's all FREE as explained in the beta note -->
+	<!--
+      <h3>Pricing</h3>
+      <p>(pricing info here)</a></p>
+	-->
+
+
+
     </div>
   </div>
   <div class="column-8 leader-2">
